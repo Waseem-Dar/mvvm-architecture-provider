@@ -1,9 +1,9 @@
 class AppUrl{
 
-  static  String baseurl = "https://reqres.in/";
+  static  String baseurl = "https://reqres.in";
 
-  static  String loginApiEndpoint = "/api/login";
+  static  String loginApiEndpoint = "$baseurl/api/login";
 
-  static  String registerApiEndpoint = "/api/register";
+  static  String registerApiEndpoint = "$baseurl/api/register";
 
 }

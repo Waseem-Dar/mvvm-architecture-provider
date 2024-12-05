@@ -6,14 +6,14 @@ import 'package:mvvm_provider/utils/utils.dart';
 import 'package:mvvm_provider/viewModel/auth_viewmodel.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   final ValueNotifier<bool> _changePasswordVisibility =
       ValueNotifier<bool>(true);
   final TextEditingController _emailController = TextEditingController();
@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Login",
+          "SignUp",
           style: TextStyle(color: AppColors.white),
         ),
         iconTheme:const IconThemeData(color: Colors.white) ,
@@ -107,8 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
               height: height * .1,
             ),
             RoundButton(
-              text: "Login",
-              loading: authViewModel.loading,
+              text: "Sign Up",
+              loading: authViewModel.signUpLoading,
               onPress: () {
                 if (_emailController.text.isEmpty) {
                   Utils.flushBarErrorMessage("Please enter email", context);
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     "email": _emailController.text.trim(),
                     "password": _passwordController.text.trim(),
                   };
-                  authViewModel.loginApi(data, context);
+                  authViewModel.signUpApi(data, context);
                 }
               },
             ),
@@ -132,9 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, RouteNames.signUp);
+                Navigator.pushNamed(context, RouteNames.login);
               },
-              child: const Text("Don't have an account? SignUp"),
+              child: const Text("Already have an account? SignIn"),
             )
           ],
         ),
