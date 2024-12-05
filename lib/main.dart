@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mvvm_provider/utils/routes/route_names.dart';
 import 'package:mvvm_provider/utils/routes/routes.dart';
 import 'package:mvvm_provider/viewModel/auth_viewmodel.dart';
+import 'package:mvvm_provider/viewModel/user_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) => AuthViewModel(),)
+      ChangeNotifierProvider(create: (_) => AuthViewModel(),),
+      ChangeNotifierProvider(create: (_) => UserViewModel(),),
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: RouteNames.login,
+      initialRoute: RouteNames.splash,
       onGenerateRoute: Routes.generateRoutes,
     ),
     );

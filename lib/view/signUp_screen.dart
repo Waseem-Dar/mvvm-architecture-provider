@@ -44,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           "SignUp",
           style: TextStyle(color: AppColors.white),
         ),
-        iconTheme:const IconThemeData(color: Colors.white) ,
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: AppColors.blue,
       ),
       body: Padding(
