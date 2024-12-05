@@ -44,4 +44,16 @@ class Utils {
       )..show(context),
     );
   }
+
+  static double averageRatings(List<int> ratings) {
+    double avg = 0;
+    for (int i = 0; i < ratings.length; i++) {
+      avg += ratings[i];
+    }
+    avg /= ratings.length;
+
+    return avg;
+  }
+
+
 }

@@ -40,6 +40,7 @@ dependencies:
   provider: ^6.1.2
   another_flushbar: ^1.12.30
   shared_preferences: ^2.3.3
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:
